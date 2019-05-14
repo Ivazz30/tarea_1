@@ -1,3 +1,4 @@
+from operator import itemgetter
 # Ejercicio atencion en un hospital
 
 # Agenda del hospital
@@ -36,4 +37,29 @@ persona =[('Sofia',   'Alfaro',   32415116,   36 , 51161161, 'consulta'),
 agenda_hospital.extend(persona)
 for x in agenda_hospital:
     print "* Paciente: %s %s Ced: %d Edad: %d Num Poliza: %d Motivo: %s" % (x)
+
+# Pregunta 1. Cuantos pacientes llegaron en total?
+
+print "Llegaron ",len(agenda_hospital)," personas en total"
+
+# Pregunta 2. Cuantos llegaron por dolor?
+
+cont_dol = 0
+for d in agenda_hospital:
+    if "dolor" in d:
+        cont_dol +=1
+
+print "Llegaron ",cont_dol," pacientes por dolor"
+
+# Pregunta 3. Ordene los pacientes de mayor edad a menor edad.
+
+# sorted([('abc', 121),('abc', 231),('abc', 148), ('abc',221)], key=lambda x: x[1])
+# print sorted([agenda_hospital], key=lambda x: x[3])
+# sorted(agenda_hospital, key = itemgetter(3), reverse = True)
+
+print "\nLos pacientes en orden de edad de mayor a menor: "
+for x in sorted(agenda_hospital, key = itemgetter(3), reverse = True):
+    print "* Paciente: %s %s Ced: %d Edad: %d Num Poliza: %d Motivo: %s" % (x)
+
+# Pregunta 4. Cuantos pacientes son mayores de edad y cuantos menores.
 
