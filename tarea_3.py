@@ -28,11 +28,11 @@ agenda_hospital.append(persona)
  #   print "Paciente %s %s Ced: %d Edad: %d Num Poliza: %d Motivo: %s" % (x)
 
 # suponga que vienen 5 personas mas
-persona =[('Sofia',   'Alfaro',   32415116,   36 , 51161161, 'consulta'),
-          ('Carlos',  'Sanchez',  33411151,   15 , 41655161, 'dolor'),
-          ('Felipe',  'Perez',    12243151,   42 , 65151111, 'documento'),
-          ('Melissa', 'Alvarado', 734114144,  10 , 87421312, 'dolor'),
-          ('Pedro',   'Castro',   4372124141, 2 ,  99313131, 'dolor'),]
+persona =[('Sofia',   'Alfaro',   32415116,   36, 51161161, 'consulta'),
+          ('Carlos',  'Sanchez',  33411151,   15, 41655161, 'dolor'),
+          ('Felipe',  'Perez',    12243151,   42, 65151111, 'documento'),
+          ('Melissa', 'Alvarado', 734114144,  10, 87421312, 'dolor'),
+          ('Pedro',   'Castro',   4372124141, 2,  99313131, 'dolor'),]
 
 agenda_hospital.extend(persona)
 for x in agenda_hospital:
@@ -63,3 +63,11 @@ for x in sorted(agenda_hospital, key = itemgetter(3), reverse = True):
 
 # Pregunta 4. Cuantos pacientes son mayores de edad y cuantos menores.
 
+mayor_edad = 0
+menor_edad = 0
+for x in agenda_hospital:
+    if x[3] > 18:
+        mayor_edad += 1
+    else:
+        menor_edad += 1
+print "\n Hay %d pacientes mayores de edad y %d pacientes menores de edad" % (mayor_edad, menor_edad)
