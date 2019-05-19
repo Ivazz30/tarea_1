@@ -77,7 +77,7 @@ print "\n Hay %d pacientes mayores de edad y %d pacientes menores de edad" % (ma
 
 for x in agenda_hospital:
     if x[5] == 'dolor':
-        print "Los pacientes que tienen dolor seran atendidos primero: ", x
+        print " \n Los pacientes que tienen dolor seran atendidos primero: ", x
 for x in sorted(agenda_hospital, key = itemgetter(3), reverse = True):
     if x[5] != 'dolor':
         print x
@@ -86,6 +86,6 @@ for x in sorted(agenda_hospital, key = itemgetter(3), reverse = True):
 
 for x in agenda_hospital:
     if x[5] != 'dolor':
-        print x
+        print sorted(x)
 
 
