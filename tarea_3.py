@@ -40,11 +40,12 @@ for x in agenda_hospital:
     print "* Paciente: %s %s Ced: %d Edad: %d Num Poliza: %d Motivo: %s" % (x)
 
 # Pregunta 1. Cuantos pacientes llegaron en total?
+print "\n Pregunta #1 \n"
 
 print "Llegaron ",len(agenda_hospital)," personas en total"
 
 # Pregunta 2. Cuantos llegaron por dolor?
-
+print "\n Pregunta #2 \n"
 cont_dol = 0
 for d in agenda_hospital:
     if "dolor" in d:
@@ -54,6 +55,7 @@ print "Llegaron ",cont_dol," pacientes por dolor"
 
 # Pregunta 3. Ordene los pacientes de mayor edad a menor edad.
 
+print "\n Pregunta #3 \n"
 # sorted([('abc', 121),('abc', 231),('abc', 148), ('abc',221)], key=lambda x: x[1])
 # print sorted([agenda_hospital], key=lambda x: x[3])
 # sorted(agenda_hospital, key = itemgetter(3), reverse = True)
@@ -63,7 +65,7 @@ for x in sorted(agenda_hospital, key = itemgetter(3), reverse = True):
     print "* Paciente: %s %s Ced: %d Edad: %d Num Poliza: %d Motivo: %s" % (x)
 
 # Pregunta 4. Cuantos pacientes son mayores de edad y cuantos menores.
-
+print "\n Pregunta #4 \n"
 mayor_edad = 0
 menor_edad = 0
 for x in agenda_hospital:
@@ -74,18 +76,26 @@ for x in agenda_hospital:
 print "\n Hay %d pacientes mayores de edad y %d pacientes menores de edad" % (mayor_edad, menor_edad)
 
 # Pregunta 5. Ordenar primero por dolor y luego por edad de Mayor a Menor
+print "\n Pregunta #5 \n"
+print "\n"
 
+print "Los pacientes con dolor seran atendidos primero: \n"
 for x in agenda_hospital:
     if x[5] == 'dolor':
-        print " \n Los pacientes que tienen dolor seran atendidos primero: ", x
+        print "* Paciente: %s %s Ced: %d Edad: %d Num Poliza: %d Motivo: %s" % (x)
+print "Pacientes segunda prioridad: "
 for x in sorted(agenda_hospital, key = itemgetter(3), reverse = True):
     if x[5] != 'dolor':
         print x
 
 # Pregunta 6. Se mueren los que tienen dolor.
-
+print "\n Pregunta #6 \n"
 for x in agenda_hospital:
     if x[5] != 'dolor':
-        print sorted(x)
+        print x
+
+
+
+
 
 
